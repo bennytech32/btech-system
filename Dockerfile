@@ -1,13 +1,13 @@
-# Hatua ya 1: Build React Assets (Frontend)
+# Hatua ya 1: Build React Assets
 FROM node:20 as node-assets
 WORKDIR /app
 COPY . .
 RUN npm install && npm run build
 
-# Hatua ya 2: Server ya PHP (Backend)
+# Hatua ya 2: Server ya PHP
 FROM php:8.2-apache
 
-# Install System Dependencies & PHP Extensions
+# Install System Dependencies
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -25,19 +25,18 @@ RUN a2enmod rewrite
 # Copy Project Files
 WORKDIR /var/www/html
 COPY . .
-# Hii inachukua React files kutoka Stage ya kwanza
 COPY --from=node-assets /app/public/build ./public/build
 
 # Weka Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
-# FIX PERMISSIONS & CACHE
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+# Hakikisha folder ya storage ipo na ina ruhusa
+RUN mkdir -p /var/www/html/storage/framework/cache/data \
+    && mkdir -p /var/www/html/storage/framework/sessions \
+    && mkdir -p /var/www/html/storage/framework/views \
+    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Safisha Laravel Cache wakati wa Build
-RUN php artisan config:clear && php artisan route:clear
 
 EXPOSE 80
 CMD ["apache2-foreground"]
