@@ -58,7 +58,7 @@ export default function About() {
                             <div className="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition">
                                 <i className="fa-solid fa-code text-4xl text-cyan-500 mb-6"></i>
                                 <h3 className="text-xl font-bold mb-3">Software</h3>
-                                <p className="text-gray-500 text-sm">Custom development and our proprietary OS ecosystem (ShuleOS, DukaOS, etc).</p>
+                                <p className="text-gray-500 text-sm">Custom development and enterprise digital solutions (Retail, Education, Healthcare platforms, etc).</p>
                             </div>
                         </div>
                     </div>

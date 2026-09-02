@@ -22,15 +22,15 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 2: Solutions (OS) */}
+                    {/* Column 2: Software Solutions */}
                     <div>
                         <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Software Solutions</h4>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">ShuleOS (Education)</Link></li>
-                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">DukaOS (Retail)</Link></li>
-                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">AfyaOS (Health)</Link></li>
-                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">MakaziOS (Real Estate)</Link></li>
-                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">View All 12 OS</Link></li>
+                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">Education & School Tech</Link></li>
+                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">Retail & Wholesale ERP</Link></li>
+                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">Healthcare Systems</Link></li>
+                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">Real Estate & Property Tech</Link></li>
+                            <li><Link href="/ecosystem" className="hover:text-cyan-400 transition">View All 12 Solutions</Link></li>
                         </ul>
                     </div>
 

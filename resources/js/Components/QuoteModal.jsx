@@ -88,7 +88,7 @@ export default function QuoteModal({ isOpen, onClose }) {
                                 <option>Electrical Installation (3-Phase/Wiring)</option>
                                 <option>Network & CCTV Installation</option>
                                 <option>Hardware Maintenance</option>
-                                <option>Buy B-Tech OS (POS, School, etc.)</option>
+                                <option>Enterprise Software Solutions (Retail, Education, etc.)</option>
                                 <option>General Consultancy</option>
                             </select>
                         </div>
