@@ -22,12 +22,19 @@ Route::get('/ecosystem', function () {
     return Inertia::render('Ecosystem');
 })->name('ecosystem');
 
+// 3.1 Projects Page
+Route::get('/projects', function () {
+    return Inertia::render('Projects');
+})->name('projects');
+
+// 3.2 Contact Page
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+})->name('contact');
+
+
 // 4. Dashboard & Auth
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');

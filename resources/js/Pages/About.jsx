@@ -1,23 +1,12 @@
 import { Link, Head } from '@inertiajs/react';
-import Footer from '@/Components/Footer';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function About() {
     return (
         <>
             <Head title="About Us - Engineering Excellence" />
             
-            <div className="bg-white font-sans text-slate-800">
-                {/* Navbar Simple */}
-                <nav className="bg-white border-b border-gray-100 p-6 fixed w-full z-50">
-                     <div className="max-w-7xl mx-auto flex justify-between items-center">
-                        <Link href="/" className="font-bold text-2xl text-slate-900">B-Tech<span className="text-blue-600">Creations</span></Link>
-                        <div className="space-x-6 text-sm font-medium text-slate-600">
-                            <Link href="/" className="hover:text-blue-600">Home</Link>
-                            <Link href="/about" className="text-blue-600 font-bold">About</Link>
-                            <Link href="/ecosystem" className="hover:text-blue-600">Ecosystem</Link>
-                        </div>
-                     </div>
-                </nav>
+            <MainLayout>
 
                 {/* Hero Section */}
                 <section className="pt-40 pb-20 bg-slate-50">
@@ -64,8 +53,7 @@ export default function About() {
                     </div>
                 </section>
 
-                <Footer />
-            </div>
+            </MainLayout>
         </>
     );
 }

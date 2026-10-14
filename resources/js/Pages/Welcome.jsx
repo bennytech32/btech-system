@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Head } from '@inertiajs/react';
-import Footer from '@/Components/Footer';
+import MainLayout from '@/Layouts/MainLayout';
 import QuoteModal from '@/Components/QuoteModal';
 
 export default function Welcome({ auth }) {
@@ -184,49 +184,8 @@ export default function Welcome({ auth }) {
             {/* THE QUOTE MODAL (Pop-up Form) */}
             <QuoteModal isOpen={isQuoteOpen} onClose={() => setQuoteOpen(false)} />
 
-            <div className="bg-white text-slate-800 font-sans antialiased scroll-smooth">
+            <MainLayout isTransparentNavbar={true}>
 
-                {/* NAVIGATION */}
-                <nav className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex justify-between h-20">
-                            <div className="flex items-center">
-                                <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-                                    <i className="fa-solid fa-layer-group text-3xl text-blue-600"></i>
-                                    <span className="font-bold text-2xl tracking-tighter text-slate-900">
-                                        B-Tech<span className="text-cyan-500">Creations</span>
-                                    </span>
-                                </Link>
-                            </div>
-
-                            <div className="hidden md:flex items-center space-x-6">
-                                <Link href="/" className="text-blue-600 font-bold transition">Home</Link>
-                                <Link href="/about" className="text-slate-600 hover:text-blue-600 font-medium transition">About Us</Link>
-                                <Link href="/ecosystem" className="text-slate-600 hover:text-blue-600 font-medium transition">OS Ecosystem</Link>
-                                <a href="#services" className="text-slate-600 hover:text-blue-600 font-medium transition">Services</a>
-                                <a href="#projects" className="text-slate-600 hover:text-blue-600 font-medium transition">Projects</a>
-
-                                {/* Kitufe cha Request Quote kwenye Navbar */}
-                                <button
-                                    onClick={() => setQuoteOpen(true)}
-                                    className="text-slate-600 hover:text-blue-600 font-bold border-l border-slate-200 pl-6"
-                                >
-                                    Request Quote
-                                </button>
-
-                                {auth.user ? (
-                                    <Link href={route('dashboard')} className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">
-                                        Dashboard
-                                    </Link>
-                                ) : (
-                                    <Link href={route('login')} className="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-slate-800 transition shadow-lg">
-                                        Client Portal
-                                    </Link>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </nav>
 
                 {/* HERO SECTION WITH SLIDING BACKGROUND IMAGE CAROUSEL */}
                 <section className="relative min-h-[90vh] flex items-center justify-center text-white pt-20 pb-16 overflow-hidden bg-slate-900">
@@ -586,9 +545,7 @@ export default function Welcome({ auth }) {
                     </div>
                 </section>
 
-                {/* PROFESSIONAL FOOTER */}
-                <Footer />
-            </div>
+            </MainLayout>
         </>
     );
 }
