@@ -10,15 +10,16 @@
   },
   "routes": [
     {
-      "src": "/index.php",
-      "dest": "/api/index.php"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
       "src": "/build/(.*)",
       "dest": "/build/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
     },
     {
       "src": "/(.*)",
@@ -26,8 +27,13 @@
     }
   ],
   "env": {
+    "APP_NAME": "B-Tech Creations",
     "APP_ENV": "production",
+    "APP_KEY": "base64:5mr0X8LmOsSdjVn8KlILOwjzQQ6VVcUXlp9p+L51gow=",
     "APP_DEBUG": "false",
+    "APP_URL": "https://btechcreations.vercel.app",
+    "DB_CONNECTION": "sqlite",
+    "DB_DATABASE": "/tmp/database.sqlite",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
